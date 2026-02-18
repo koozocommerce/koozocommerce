@@ -1,1 +1,691 @@
-blog1 kids
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Gadgets for Work From Home in 2025</title>
+    <link rel="icon" type="image/png" href="https://www.koozo.com/cdn/shop/files/favicon1.png?crop=center&height=32&v=1763709185&width=32">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           COLORS AND FONTS
+        ============================================ */
+        :root {
+            --main-green: #9acd32;
+            --dark-bg: #0f172a;
+            --light-text: #64748b;
+            --mint-bg: #f1f6f6;
+            --teal: #2b7a78;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        header img {
+            height: 70px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: var(--dark-bg);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--main-green);
+        }
+
+        .nav-btn {
+            background-color: #ffcc00;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #000 !important;
+            font-weight: 700;
+        }
+
+        /* ============================================
+           BLOG POST CONTAINER
+        ============================================ */
+        .post-container {
+            max-width: 1400px;
+            margin: 120px auto 80px;
+            padding: 0 8%;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 80px;
+        }
+
+        /* ============================================
+           TABLE OF CONTENTS (LEFT SIDEBAR)
+           Sticky sidebar that follows on scroll
+        ============================================ */
+        .toc-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .toc-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: 25px;
+        }
+
+        .toc-list {
+            list-style: none;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        /* Custom scrollbar for TOC */
+        .toc-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .toc-list::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+
+        .toc-list::-webkit-scrollbar-thumb {
+            background: var(--teal);
+            border-radius: 10px;
+        }
+
+        .toc-list::-webkit-scrollbar-thumb:hover {
+            background: #1f5f5d;
+        }
+
+        .toc-list li {
+            margin-bottom: 15px;
+        }
+
+        .toc-list a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .toc-list a:hover {
+            color: var(--teal);
+        }
+
+        .toc-list .sub-item {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .toc-list .sub-item a {
+            font-size: 0.88rem;
+            font-weight: 400;
+        }
+
+        /* ============================================
+           READ MORE SECTION (Related Posts)
+        ============================================ */
+        .read-more-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: 20px;
+        }
+
+        .related-post {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .related-post:hover {
+            transform: translateX(5px);
+        }
+
+        .related-post img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .related-post h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            line-height: 1.4;
+            transition: color 0.3s;
+        }
+
+        .related-post:hover h4 {
+            color: var(--teal);
+        }
+
+        .sidebar-divider {
+            height: 2px;
+            background: #f1f5f9;
+            margin: 30px 0;
+        }
+
+        /* ============================================
+           MAIN BLOG CONTENT AREA
+        ============================================ */
+        .post-content {
+            max-width: 800px;
+        }
+
+        /* Category badge */
+        .category-badge {
+            display: inline-block;
+            background: rgba(154, 205, 50, 0.15);
+            color: #6b8e23;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+        }
+
+        /* Main title */
+        .post-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--dark-bg);
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        /* Author and date info */
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--mint-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--teal);
+            font-size: 1.2rem;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--dark-bg);
+        }
+
+        .post-date {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        .read-time {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Featured image */
+        .featured-image {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ============================================
+           BLOG CONTENT STYLING
+        ============================================ */
+        .post-body h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            scroll-margin-top: 100px;
+        }
+
+        .post-body h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            scroll-margin-top: 100px;
+        }
+
+        .post-body p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 25px;
+        }
+
+        .post-body p strong a {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .post-body p strong a:hover {
+            text-decoration: underline;
+        }
+
+        /* Images within content */
+        .content-image {
+            width: 100%;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .content-image img,
+        .wp-block-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+    background: #000;
+    color: #fff;
+    padding: 80px 40px 40px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-brand h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+}
+
+.footer-column h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-column a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #777;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+/* Important: removes image bottom gap */
+footer img {
+    display: block;
+}
+
+
+        /* ============================================
+           MOBILE RESPONSIVE
+        ============================================ */
+        @media (max-width: 992px) {
+            .post-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 5%;
+                margin-top: 100px;
+            }
+
+            .toc-sidebar {
+                position: relative;
+                top: 0;
+                background: var(--mint-bg);
+                padding: 30px;
+                border-radius: 15px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER
+    ============================================ -->
+    <header>
+        <img src="https://www.koozo.com/cdn/shop/files/Untitled_design_19.png?v=1767965591&width=500" alt="koozo">
+        <nav>
+            <a href="https://koozo.vercel.app/">Home</a>
+            <a href="https://koozo.vercel.app/blog">Blog</a>
+            <a href="https://www.koozo.com/pages/about-us">About Us</a>
+            <a href="https://www.koozo.com/pages/contact/">Contact</a>
+            <a href="https://www.koozo.com/" class="nav-btn ms-4">Shop</a>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         BLOG POST LAYOUT
+         Left: Table of Contents
+         Right: Blog Content
+    ============================================ -->
+    <div class="post-container">
+
+        <!-- TABLE OF CONTENTS (LEFT SIDEBAR) -->
+        <aside class="toc-sidebar">
+            
+            <!-- READ MORE SECTION (Related Post) -->
+            <div class="read-more-section">
+                <h3 class="section-title">Read More</h3>
+                
+                <!-- Related Post -->
+                <a href="https://koozo.vercel.app/blog/importance-of-good-posture-and-back/" class="related-post">
+                    <img src="https://www.koozo.com/cdn/shop/files/Posture_purple.png?v=1770971344&width=846" alt="VC Platform">
+                    <h4>The Importance of Good Posture and Back Support While Sitting: A Comprehensive Guide
+
+</h4>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+
+            <!-- TABLE OF CONTENTS -->
+
+<div class="toc-sidebar">
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <div class="toc-scroll">
+      <ul class="toc-list">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#proper-assembly-and-stability-checks">Proper Assembly and Stability Checks</a></li>
+        <li>
+          <a href="#customizing-the-stand-for-your-baby">Customizing the Stand for Your Baby</a>
+          
+        </li>
+        <li>
+          <a href="#essential-safety-habits-during-bath-time">Essential Safety Habits During Bath Time</a>
+          
+        </li>
+        <li><a href="#cleaning-and-maintenance-for-longevity">Cleaning and Maintenance for Longevity</a></li>
+        <li><a href="#why-the-trulittle-stand-is-a-smart-investment">Why the Trulittle Stand is a Smart Investment</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</aside>
+
+        <!-- MAIN BLOG CONTENT -->
+        <article class="post-content">
+            
+            <!-- Category Badge -->
+            <span class="category-badge">Kids</span>
+
+            <!-- Blog Title -->
+            <h1 class="post-title">How To Safely Use The Trulittle Adjustable Baby Bath Stand
+</h1>
+
+            <!-- Author Info and Meta -->
+            <div class="post-meta">
+                <div class="author-info">
+                    <div class="author-avatar">
+                        VG
+                    </div>
+                    <div>
+                        <div class="author-name">Vipul Gupta</div>
+                        <div class="post-date">February 18, 2026</div>
+                    </div>
+                </div>
+                <div class="read-time">
+                    <i class="far fa-clock"></i> 6 min read
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="featured-image">
+                <img src="https://www.koozo.com/cdn/shop/files/Baby_bath_stand.png?v=1763040116&width=846" alt="koozo gadgets">
+            </div>
+
+            <!-- Blog Post Body Content -->
+            <div class="post-body">
+              
+            <h2 id="introduction">Introduction</h2>
+<p>Bath time is a special bonding moment between parents and their little ones, but it can also be physically demanding and slippery. The Trulittle Adjustable Baby Bath Stand is designed to take the stress out of washing by providing a secure, elevated platform for your infant. This ergonomic solution saves your back from strain while keeping your baby safely contained. Before you start splashing, it is crucial to understand exactly how to set up and utilize this device to prevent accidents. While many parents browse for <strong><a href="https://koozo.com/">kids toys online</a></strong> to entertain their children, investing in practical safety gear like this bath stand is equally important for a happy, healthy home environment.</p>
+
+<h2 id="proper-assembly-and-stability-checks">Proper Assembly and Stability Checks</h2>
+<p>Before placing your baby anywhere near the water, the first step is ensuring the stand is assembled correctly. The Trulittle stand typically arrives folded, so you need to expand it fully until the legs lock into place. Listen for a distinct "click" sound, which indicates the safety locks are engaged. Once standing, place it on a flat, non-textured surface. Press down firmly on the center of the seat to test its stability. The non-slip feet should grip the floor or bathtub surface without sliding. Never place the stand on an elevated surface like a counter or table; it is designed for use inside a bathtub or on a stable floor area only to prevent dangerous falls.</p>
+
+<h2 id="customizing-the-stand-for-your-baby">Customizing the Stand for Your Baby</h2>
+
+<p><strong id="adjusting-the-height">Adjusting the Height<br></strong>One of the standout features of this stand is its adjustability. Before the bath begins, set the height to a level that is comfortable for you to reach without excessive bending. This not only protects your back but ensures you have full control over your baby. Unlike impulsive kids gifts online that might not suit every child, this practical feature makes the stand versatile for different caregivers.</p>
+
+<img src="https://www.koozo.com/cdn/shop/files/Baby-Bath2.jpg?v=1764230787&amp;width=846" alt="" />
+
+<p><strong id="securing-the-recline-angle">Securing the Recline Angle<br></strong>Depending on your baby's age and neck strength, you will want to adjust the recline of the backrest. For younger infants who cannot support their heads, ensure the stand is in its most reclined position to keep their airway open and head supported. Older babies who can sit up might prefer a more upright angle to look around.</p>
+
+<p><strong id="checking-the-safety-bar">Checking the Safety Bar<br></strong>Ensure the front safety bar or T-bar is securely locked in place. This is the primary barrier that prevents your slippery little one from sliding out of the seat. Give it a gentle tug to confirm it won't pop open if your baby kicks or pushes against it during the bath.</p>
+
+<h2 id="essential-safety-habits-during-bath-time">Essential Safety Habits During Bath Time</h2>
+
+<p><strong id="constant-supervision">Constant Supervision<br></strong>The golden rule of bath safety is never leaving your child unattended, not even for a second. Have all your soaps, washcloths, and towels within arm's reach before you start. Even though the stand is secure, a baby can slip or the water level can rise. If you need to leave the room, take the baby with you.</p>
+
+<p><strong id="managing-water-levels">Managing Water Levels<br></strong>When using the stand inside a larger bathtub, be mindful of the water depth. The water should never go above your baby's waist when they are seated. While browsing for baby toys online, you might find fun floating ducks, but remember that too much water can turn a fun bath into a hazard. Keep the drain open or monitor the level closely.</p>
+
+<p><strong id="temperature-control">Temperature Control<br></strong>Always test the water temperature on your wrist or elbow before placing your baby in the stand. The durable material of the Trulittle stand is comfortable, but it can absorb heat or cold. Splash some water on the backrest to acclimate the surface temperature so it doesn't shock your baby’s skin upon contact.</p>
+
+<h2 id="cleaning-and-maintenance-for-longevity">Cleaning and Maintenance for Longevity</h2>
+<p>After the bath is over, proper maintenance ensures the stand remains hygienic and safe for future use. The Trulittle stand features smart drainage holes that prevent water from pooling, but you should still rinse it thoroughly to remove soap scum and body oils. These residues can make the surface slippery or degrade the material over time. Wipe the stand down with a dry towel or leave it in a well-ventilated area to air dry completely. This prevents the growth of mold and mildew in the crevices. Periodically inspect the rubber non-slip feet to ensure they haven't worn down, as they are critical for maintaining traction on wet bathroom surfaces.</p>
+
+<h2 id="why-the-trulittle-stand-is-a-smart-investment">Why the Trulittle Stand is a Smart Investment</h2>
+
+<img src="https://www.koozo.com/cdn/shop/files/1500X1500_4_1.png?v=1770964729&amp;width=846" alt="" />
+
+<p>Choosing the right bath support is about balancing comfort with safety. The Trulittle Adjustable Baby Bath Stand excels because it grows with your child. Suitable for infants from 6 months up to toddlers, it offers a longevity that static baby tubs cannot match. The combination of a sturdy stainless steel frame with soft, skin-friendly PP and TPE materials means it is durable yet gentle. It folds flat for easy storage, making it perfect for families with limited space or those who travel. By prioritizing a stable, adjustable platform, you are investing in peace of mind, ensuring that bath time remains a joy rather than a chore.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>In summary, the Trulittle Adjustable Baby Bath Stand is a fantastic tool that enhances safety and convenience during your daily routine. By following proper setup procedures, adjusting the fit for your child, and adhering to strict supervision rules, you can transform bath time into a stress-free experience. It eliminates the back-breaking work of supporting a slippery baby while ensuring they remain secure and comfortable. As you look for the best products for your family, from educational games to <strong><a href="https://koozo.com/">toys online India</a></strong>, remember that practical safety gear like this stand is a foundational purchase that supports your child's well-being every single day.</p>
+ </div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+<h4>Also avilable on</h4>
+                       <a href="https://koozo.com/" class="logo">
+    <img src="https://www.koozo.com/cdn/shop/files/blinkit.png?v=1765356448&width=480" 
+         alt="KOOZO Logo" 
+         style="height: 66px; width: auto;">
+</a><br>
+
+                    <h5>Koozo Commerce Pvt. Ltd.</h5>
+<p>
+Splendor Spectrum One, Tower 1<br>
+4th Floor, Golf Course Ext. Road Sector-58,<br>
+Gurugram, 122001, HR
+</p>
+
+<div class="social-links">
+    <a href="https://www.facebook.com/share/1PmDSbqvWU/" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/facebook.png?v=1765360337" alt="Facebook">
+    </a>
+
+    <a href="https://www.instagram.com/social.koozo" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/instagram.png?v=1765360337" alt="Instagram">
+    </a>
+
+    <a href="https://youtube.com/@koozo_commerce" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/youtube.png?v=1765360337" alt="YouTube">
+    </a>
+
+    <a href="https://www.linkedin.com/company/koozocommerce/" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/linkedin.png?v=1765360336" alt="LinkedIn">
+    </a>
+</div>
+
+                </div>
+                 <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="https://www.koozo.com/pages/about-us">About Us</a>
+                    <a href="https://www.koozo.com/collections/all">Our Products</a>
+                    <a href="https://koozo.vercel.app/blog/">Blog</a>
+                    <a href="https://www.koozo.com/pages/partner-program">Partner Program</a>
+                    <a href="https://www.koozo.com/pages/bulk-orders">Bulk Orders</a>
+                    <a href="https://www.koozo.com/pages/track-order">Track Order</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <a href="https://www.koozo.com/pages/contact">Contact Us</a>
+                    <a href="https://www.koozo.com/pages/shipping-policy">Shipping Policy</a>
+                    <a href="https://www.koozo.com/pages/return-policy">Return Policy</a>
+                    <a href="https://www.koozo.com/pages/privacy-policy">Privacy Policy</a>
+                    <a href="https://www.koozo.com/pages/terms-of-service">Terms of Service</a>
+                    <a href="https://www.koozo.com/pages/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Koozo Commerce Pvt Ltd. All the purchases should be made on koozo.com official website only 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
