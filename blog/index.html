@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koozo Blog</title>
+<link rel="icon" type="image/png" href="https://www.koozo.com/cdn/shop/files/favicon1.png?crop=center&height=32&v=1763709185&width=32">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   RESET & FOUNDATIONS
+═══════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:       #0C0C0C;
+  --ink-soft:  #2A2A2A;
+  --mid:       #6C6C6C;
+  --silver:    #A0A0A0;
+  --rule:      #E6E6E6;
+  --wash:      #F5F5F3;
+  --paper:     #FAFAF8;
+  --white:     #FFFFFF;
+  --gold:      #F5A800;
+  --gold-lt:   #FFD04D;
+  --gold-dk:   #C98800;
+  --ember:     #E63B2E;
+  --jade:      #1A7A4A;
+  --sky:       #0057A8;
+  --ease:      cubic-bezier(.4,0,.2,1);
+  --ease-out:  cubic-bezier(0,0,.2,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Outfit',sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+
+/* ═══════════════════════════════════════════
+   PAGE-LOAD ANIMATION
+═══════════════════════════════════════════ */
+.page-enter{
+  opacity:0;
+  transform:translateY(16px);
+  animation:pageEnter .6s var(--ease-out) forwards;
+}
+@keyframes pageEnter{to{opacity:1;transform:none;}}
+
+/* ═══════════════════════════════════════════
+   REVEAL ON SCROLL
+═══════════════════════════════════════════ */
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.in{opacity:1;transform:none;}
+
+/* ═══════════════════════════════════════════
+   ANNOUNCEMENT TICKER
+═══════════════════════════════════════════ */
+.ticker-wrap{
+  background:var(--ink);
+  overflow:hidden;
+  padding:12px 0;
+  position:relative;
+}
+.ticker-wrap::before,
+.ticker-wrap::after{
+  content:'';
+  position:absolute;top:0;width:80px;height:100%;z-index:2;
+}
+.ticker-wrap::before{left:0;background:linear-gradient(90deg,var(--ink),transparent);}
+.ticker-wrap::after{right:0;background:linear-gradient(-90deg,var(--ink),transparent);}
+.ticker-track{
+  display:flex;
+  width:max-content;
+  animation:ticker 28s linear infinite;
+}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.ticker-track span{
+  white-space:nowrap;
+  padding:0 48px;
+  color:rgba(255,255,255,.75);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.4px;
+}
+.ticker-track span b{color:var(--gold);font-weight:700;}
+
+/* ═══════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════ */
+.site-header{
+  position:sticky;top:0;z-index:900;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(24px) saturate(200%);
+  border-bottom:1px solid var(--rule);
+  transition:box-shadow .3s var(--ease);
+}
+.site-header.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.08);}
+.header-inner{
+  max-width:1480px;margin:0 auto;
+  padding:0 48px;
+  height:70px;
+  display:grid;
+  grid-template-columns:200px 1fr 200px;
+  align-items:center;
+  gap:32px;
+}
+.h-logo{
+  font-family:'Lora',serif;
+  font-size:30px;font-weight:700;
+  color:var(--ink);letter-spacing:-0.5px;
+  transition:color .2s;
+}
+.h-logo:hover{color:var(--gold-dk);}
+.h-logo span{color:var(--gold);}
+
+.h-search{
+  display:flex;align-items:center;
+  background:var(--wash);
+  border:2px solid transparent;
+  border-radius:10px;
+  overflow:hidden;
+  transition:border-color .25s,box-shadow .25s;
+}
+.h-search:focus-within{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(245,168,0,.1);
+}
+.h-search input{
+  flex:1;border:none;outline:none;
+  background:transparent;
+  padding:12px 18px;
+  font-size:14.5px;font-weight:400;
+  color:var(--ink);
+  font-family:'Outfit',sans-serif;
+}
+.h-search input::placeholder{color:var(--silver);}
+.h-search button{
+  background:var(--ink);color:var(--gold);
+  border:none;cursor:pointer;
+  padding:0 20px;height:46px;
+  font-size:15px;
+  transition:background .2s;
+}
+.h-search button:hover{background:var(--ink-soft);}
+
+.h-actions{
+  display:flex;align-items:center;
+  justify-content:flex-end;gap:4px;
+}
+.h-action{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--ink-soft);
+  cursor:pointer;transition:all .2s var(--ease);
+  position:relative;
+}
+.h-action:hover{background:var(--wash);color:var(--ink);}
+.h-badge{
+  position:absolute;top:3px;right:3px;
+  width:18px;height:18px;
+  background:var(--ember);color:var(--white);
+  border-radius:50%;font-size:10px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.h-nav{
+  grid-column:1/-1;
+  border-top:1px solid var(--rule);
+  background:var(--white);
+}
+.h-nav-inner{
+  max-width:1480px;margin:0 auto;padding:0 48px;
+  display:flex;align-items:center;gap:0;
+}
+.h-nav a{
+  padding:14px 20px;
+  font-size:14px;font-weight:600;
+  color:var(--mid);
+  display:flex;align-items:center;gap:6px;
+  transition:color .2s;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+}
+.h-nav a:hover,.h-nav a.active{
+  color:var(--ink);border-bottom-color:var(--gold);
+}
+
+/* ═══════════════════════════════════════════
+   BLOG HERO — EDITORIAL LUXURY
+═══════════════════════════════════════════ */
+.blog-hero{
+  min-height:65vh;
+  background:linear-gradient(135deg,#0a0e1a 0%,#0f2040 65%,#0a1628 100%);
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  padding:100px 48px 80px;
+}
+.blog-hero::before{
+  content:'';position:absolute;
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,168,0,.08),transparent 70%);
+  top:-300px;right:-200px;
+  animation:heroGlow 12s ease-in-out infinite;
+}
+@keyframes heroGlow{
+  0%,100%{transform:scale(1) rotate(0deg);}
+  50%{transform:scale(1.1) rotate(180deg);}
+}
+.blog-hero::after{
+  content:'';position:absolute;
+  inset:0;
+  background:url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.02)"/></svg>');
+  pointer-events:none;
+}
+.bh-inner{
+  max-width:1000px;margin:0 auto;
+  text-align:center;
+  position:relative;z-index:2;
+}
+.bh-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(245,168,0,.15);
+  border:1px solid rgba(245,168,0,.4);
+  color:var(--gold-lt);
+  padding:10px 24px;border-radius:50px;
+  font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:2px;
+  margin-bottom:36px;
+}
+.bh-tag i{font-size:14px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.bh-title{
+  font-family:'Lora',serif;
+  font-size:clamp(44px,6vw,76px);
+  font-weight:700;
+  color:var(--white);
+  line-height:1.05;
+  margin-bottom:28px;
+  letter-spacing:-1px;
+}
+.bh-title em{
+  font-style:italic;
+  color:var(--gold);
+}
+.bh-desc{
+  font-size:20px;
+  color:rgba(255,255,255,.7);
+  line-height:1.7;
+  max-width:680px;
+  margin:0 auto;
+}
+
+/* ═══════════════════════════════════════════
+   BLOG POSTS — ASYMMETRIC MASONRY
+═══════════════════════════════════════════ */
+.blog-posts{
+  padding:120px 48px;
+  background:var(--white);
+  position:relative;
+}
+.bp-grid{
+  max-width:1480px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:50px;
+}
+
+/* Article Cards */
+.article{
+  background:var(--white);
+  border-radius:24px;
+  overflow:visible;
+  transition:all .5s var(--ease);
+  cursor:pointer;
+  position:relative;
+  display:flex;flex-direction:column;
+  border:2px solid var(--rule);
+}
+.article:hover{
+  transform:translateY(-12px);
+  box-shadow:0 32px 80px rgba(0,0,0,.14);
+  border-color:var(--gold);
+}
+
+/* Remove Feature Layout — All Posts Same Size */
+.article.feature{
+  grid-column:span 1;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  min-height:auto;
+}
+.article.feature .art-img{
+  height:450px;
+  border-radius:24px 24px 0 0;
+}
+.article.feature .art-content{
+  padding:44px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Standard Layout */
+.art-img{
+  height:450px;
+  background:var(--wash);
+  position:relative;
+  overflow:hidden;
+  border-radius:24px 24px 0 0;
+}
+.art-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .7s var(--ease);
+}
+.article:hover .art-img img{
+  transform:scale(1.08);
+}
+
+/* Category Badge */
+.art-cat{
+  position:absolute;top:28px;left:28px;
+  background:var(--ink);
+  border:2px solid var(--gold);
+  color:var(--gold);
+  padding:10px 24px;border-radius:50px;
+  font-size:12px;font-weight:800;
+  text-transform:uppercase;letter-spacing:1.5px;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+
+/* Reading Time Badge */
+.art-time{
+  position:absolute;bottom:28px;right:28px;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(12px);
+  color:var(--white);
+  padding:10px 20px;border-radius:50px;
+  font-size:12px;font-weight:600;
+  display:flex;align-items:center;gap:7px;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
+}
+.art-time i{color:var(--gold);font-size:11px;}
+
+/* Content Area */
+.art-content{
+  padding:44px;
+  flex:1;
+  display:flex;flex-direction:column;
+}
+.art-meta{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:20px;
+  font-size:13px;color:var(--silver);
+  font-weight:600;
+}
+.art-meta i{color:var(--gold);margin-right:5px;}
+.art-title{
+  font-family:'Lora',serif;
+  font-size:clamp(24px,2.5vw,36px);
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.2;
+  margin-bottom:18px;
+  letter-spacing:-.5px;
+}
+.art-excerpt{
+  font-size:16px;
+  color:var(--mid);
+  line-height:1.75;
+  margin-bottom:32px;
+  flex:1;
+}
+.art-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:24px;
+  border-top:1px solid var(--rule);
+}
+.art-author{
+  display:flex;align-items:center;gap:12px;
+}
+.author-av{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--ink);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:800;
+  flex-shrink:0;
+}
+.author-name{
+  font-size:14px;font-weight:700;color:var(--ink);
+}
+.author-title{
+  font-size:12px;color:var(--silver);margin-top:2px;
+}
+.read-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:var(--gold);
+  padding:12px 28px;border-radius:8px;
+  font-size:14px;font-weight:700;
+  transition:all .3s var(--ease-spring);
+}
+.read-btn:hover{
+  background:var(--gold);color:var(--ink);
+  gap:12px;
+  transform:translateX(4px);
+}
+
+/* ═══════════════════════════════════════════
+   CTA BANNER
+═══════════════════════════════════════════ */
+.cta{
+  background:var(--gold);
+  padding:100px 48px;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;
+  width:700px;height:700px;border-radius:50%;
+  background:rgba(0,0,0,.05);
+  top:-250px;right:-150px;
+  pointer-events:none;
+}
+.cta-inner{
+  max-width:900px;margin:0 auto;
+  text-align:center;
+  position:relative;z-index:2;
+}
+.cta-inner h2{
+  font-family:'Lora',serif;
+  font-size:clamp(32px,4.5vw,54px);
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.15;
+  margin-bottom:20px;
+  letter-spacing:-.5px;
+}
+.cta-inner p{
+  font-size:19px;
+  color:rgba(0,0,0,.65);
+  margin-bottom:44px;
+  line-height:1.6;
+}
+.btn-big{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--white);
+  padding:20px 48px;border-radius:10px;
+  font-size:16px;font-weight:700;
+  transition:all .3s var(--ease-spring);
+  box-shadow:0 12px 40px rgba(0,0,0,.2);
+}
+.btn-big:hover{
+  background:var(--ink-soft);
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer{background:#080808;padding:80px 48px 40px;}
+.footer-inner{max-width:1480px;margin:0 auto;}
+.footer-top{
+  display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;
+  gap:60px;margin-bottom:60px;
+  padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.f-brand-logo{
+  font-family:'Lora',serif;
+  font-size:34px;font-weight:700;color:var(--gold);
+  margin-bottom:16px;
+}
+.f-brand-desc{
+  font-size:14px;color:rgba(255,255,255,.45);
+  line-height:1.75;margin-bottom:30px;max-width:300px;
+}
+.f-socials{display:flex;gap:10px;}
+.f-soc{
+  width:40px;height:40px;border-radius:8px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.5);font-size:15px;
+  cursor:pointer;transition:all .2s var(--ease);
+}
+.f-soc:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+.f-col h5{
+  font-size:12px;font-weight:700;
+  color:rgba(255,255,255,.85);
+  text-transform:uppercase;letter-spacing:1.5px;
+  margin-bottom:22px;
+}
+.f-col a{
+  display:block;font-size:14px;
+  color:rgba(255,255,255,.4);
+  margin-bottom:13px;
+  transition:color .2s;
+}
+.f-col a:hover{color:var(--gold);}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.25);}
+.pay-chips{display:flex;gap:8px;}
+.chip{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  padding:7px 14px;border-radius:6px;
+  font-size:12px;font-weight:700;
+  color:rgba(255,255,255,.4);letter-spacing:.5px;
+}
+
+/* ═══════════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════════ */
+.back-top{
+  position:fixed;bottom:36px;right:36px;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--ink);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;cursor:pointer;z-index:800;
+  box-shadow:0 6px 24px rgba(0,0,0,.25);
+  opacity:0;pointer-events:none;
+  transition:all .3s var(--ease);
+}
+.back-top.show{opacity:1;pointer-events:all;}
+.back-top:hover{background:var(--gold);color:var(--ink);transform:translateY(-4px);}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media(max-width:1200px){
+  .header-inner{padding:0 28px;}
+  .bp-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
+}
+@media(max-width:768px){
+  .header-inner{grid-template-columns:auto 1fr auto;height:60px;}
+  .h-search{display:none;}
+  .bp-grid{gap:32px;}
+  .art-content{padding:32px;}
+  .footer-top{grid-template-columns:1fr;gap:28px;}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center;}
+  .h-nav-inner{gap:0;overflow-x:auto;}
+}
+</style>
+</head>
+<body class="page-enter">
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+ <div class="ticker-track">
+      <span>🚚 <b>FREE SHIPPING</b> on all orders</span>
+    <span>⚡ <b>FLASH SALE</b> — Up to 50% off</span>
+    <span>⭐ Rated <b>4.9/5</b> by 50,000+ customers</span>
+    <span>💳 <b>COD Available</b> across all major cities</span>
+    <span>↩️ <b>30-Day</b> hassle-free returns</span>
+         <span>🚚 <b>FREE SHIPPING</b> on all orders</span>
+    <span>⚡ <b>FLASH SALE</b> — Up to 50% off</span>
+    <span>⭐ Rated <b>4.9/5</b> by 50,000+ customers</span>
+    <span>💳 <b>COD Available</b> across all major cities</span>
+    <span>↩️ <b>30-Day</b> hassle-free returns</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+   <a href="/" class="logo">
+    <img src="https://www.koozo.com/cdn/shop/files/Untitled_design_19.png?v=1767965591&width=500" 
+         alt="KOOZO Logo" 
+         style="height: 66px; width: auto;">
+</a>
+    <div class="h-search">
+      <input type="text" placeholder="Search products, brands and categories…">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="h-actions">
+
+      <div class="h-action">
+       <a href="https://www.koozo.com/cart" class="h-action">
+    <i class="fas fa-shopping-bag"></i>
+</a>
+
+        <span class="h-badge">3</span>
+      </div>
+    <a href="https://www.koozo.com" class="h-action">
+    <i class="far fa-user"></i>
+</a>
+
+    </div>
+  </div>
+  <div class="h-nav">
+    <div class="h-nav-inner">
+      <a href="https://koozo.vercel.app/" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="https://www.koozo.com/collections/all">Shop All</a>
+      <a href="https://www.koozo.com/collections/kitchen-drinkware">Kitchen &amp; Drinkware</a>
+      <a href="https://www.koozo.com/collections/health-wellness">Health &amp; Wellness</a>
+      <a href="https://www.koozo.com/collections/beauty">Beauty</a>
+      <a href="https://www.koozo.com/collections/home-lifestyle">Home &amp; Lifestyle</a>
+      <a href="https://koozo.vercel.app/blog">Blog</a>
+      <a href="https://www.koozo.com/pages/about-us">About</a>
+      <a href="https://www.koozo.com/pages/contact">Contact</a>
+    </div>
+  </div>
+</header>
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <div class="bh-inner">
+    <div class="bh-tag">
+      <i class="fas fa-pen-nib"></i>
+      Koozo Blogs
+    </div>
+    <h1 class="bh-title">
+      Wellness.<br>
+      <em>Lifestyle.</em><br>
+      Innovation.
+    </h1>
+    <p class="bh-desc">Expert insights, product deep-dives, and the science behind living better. Your guide to a healthier, smarter, more vibrant life.</p>
+  </div>
+</section>
+
+<!-- BLOG POSTS -->
+<section class="blog-posts">
+  <div class="bp-grid">
+
+    <!-- Featured Post 1 — Large -->
+    <article class="article feature reveal">
+      <div class="art-img">
+        <span class="art-cat">Kids</span>
+        <span class="art-time"><i class="far fa-clock"></i> 6 min read</span>
+        <img src="https://www.koozo.com/cdn/shop/files/Baby_bath_stand.png?v=1763040116&width=846" alt="Skin Aging in India">
+      </div>
+      <div class="art-content">
+        <div class="art-meta">
+          <span><i class="far fa-calendar"></i> Feb 20, 2026</span>
+          <span><i class="far fa-eye"></i> 2,847 views</span>
+        </div>
+        <h2 class="art-title">How To Safely Use The Trulittle Adjustable Baby Bath Stand<br><br></h2>
+        <p class="art-excerpt">Bath time is a special bonding moment between parents and their little ones, but it can also be physically demanding and slippery. The Trulittle Adjustable Baby Bath Stand is designed to take the stress out of washing by providing a secure, elevated platform for your infant.</p>
+        <div class="art-footer">
+          <div class="art-author">
+            <div class="author-av">VG</div>
+            <div>
+              <div class="author-name">Vipul Gupta</div>
+              <div class="author-title">Koozo Team</div>
+            </div>
+          </div>
+          <a href="https://koozo.vercel.app/blog/how-to-use-baby-bath-stand" class="read-btn">
+            Read Article
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Post 2 — Standard -->
+    <article class="article reveal">
+      <div class="art-img">
+        <span class="art-cat">Health & Wellness</span>
+        <span class="art-time"><i class="far fa-clock"></i> 6 min read</span>
+        <img src="https://www.koozo.com/cdn/shop/files/Posture_purple.png?v=1770971344&width=846" alt="Blender Comparison">
+      </div>
+      <div class="art-content">
+        <div class="art-meta">
+          <span><i class="far fa-calendar"></i> Feb 20, 2026</span>
+          <span><i class="far fa-eye"></i> 3,125 views</span>
+        </div>
+        <h2 class="art-title">The Importance of Good Posture and Back Support While Sitting: A Comprehensive Guide</h2>
+        <p class="art-excerpt">In our modern, sedentary lifestyles, most of us spend more time sitting than sleeping. Whether at a desk, in a car, or on the couch, this prolonged inactivity can wreak havoc on our spinal alignment. Good posture is not just about looking confident....</p>
+        <div class="art-footer">
+          <div class="art-author">
+            <div class="author-av">VG</div>
+            <div>
+            <div class="author-name">Vipul Gupta</div>
+              <div class="author-title">Koozo Team</div>
+            </div>
+          </div>
+          <a href="https://koozo.vercel.app/blog/importance-of-good-posture-and-back" class="read-btn">
+            Read Article
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Discover Products Featured in Our Stories</h2>
+    <p>From smart health trackers to portable blenders — shop the products our editorial team recommends.</p>
+    <a href="#" class="btn-big">
+      Browse Collection
+      <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="f-brand-logo">Koozo</div>
+        <p class="f-brand-desc">Premium lifestyle and wellness products for modern India. Quality you can trust, innovation you deserve — delivered to your doorstep.</p>
+        <div class="f-socials">
+<a href="https://www.facebook.com/share/1PmDSbqvWU/" 
+   target="_blank" 
+   class="f-soc">
+   <i class="fab fa-facebook-f"></i>
+</a>
+         <a href="https://www.instagram.com/social.koozo" target="_blank" class="f-soc">
+    <i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://youtube.com/@koozo_commerce" target="_blank" class="f-soc">
+    <i class="fab fa-youtube"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/koozocommerce/" target="_blank" class="f-soc">
+    <i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://whatsapp.com/channel/0029VbAyhGdI1rcigqVemV2M" target="_blank" class="f-soc">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+        </div>
+      </div>
+      <div class="f-col">
+        <h5>Shop</h5>
+        <a href="https://www.koozo.com/collections/all">All Products</a>
+        <a href="https://www.koozo.com/collections/bestsellers">Bestsellers</a>
+        <a href="https://www.koozo.com/collections/newarrival">New Arrivals</a>
+        <a href="https://www.koozo.com/collections/smart-choices">Smart Choices</a>
+        <a href="https://www.koozo.com/collections/flagship">Flagship</a>
+      </div>
+      <div class="f-col">
+        <h5>Help</h5>
+        <a href="https://www.koozo.com/pages/contact">Contact Us</a>
+        <a href="https://www.koozo.com/pages/track-order">Track Order</a>
+        <a href="https://www.koozo.com/pages/return-policy">Returns &amp; Refunds</a>
+        <a href="https://www.koozo.com/pages/about-us">About</a>
+        <a href="https://www.koozo.com/pages/shipping-policy">Shipping Info</a>
+      </div>
+      <div class="f-col">
+        <h5>Company</h5>
+        <a href="https://koozo.vercel.app/">Home</a>
+        <a href="https://koozo.vercel.app/blog">Blog</a>
+        <a href="https://www.koozo.com/pages/contact">Contact us</a>
+        <a href="https://www.koozo.com/pages/privacy-policy">Privacy Policy</a>
+        <a href="https://www.koozo.com/pages/terms-of-service">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Koozo Commerce Pvt. Ltd. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- BACK TO TOP -->
+<div class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></div>
+
+<script>
+/* ── SCROLL EFFECTS ──────────────────── */
+const header = document.getElementById('siteHeader');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  const s = window.scrollY;
+  header.classList.toggle('scrolled', s > 20);
+  backTop.classList.toggle('show', s > 400);
+});
+backTop.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+
+/* ── SCROLL REVEAL ───────────────────── */
+const revEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }
+  });
+}, {threshold: 0.12});
+revEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
