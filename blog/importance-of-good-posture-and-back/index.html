@@ -1,1 +1,692 @@
-blog 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Gadgets for Work From Home in 2025</title>
+    <link rel="icon" type="image/png" href="https://www.koozo.com/cdn/shop/files/favicon1.png?crop=center&height=32&v=1763709185&width=32">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           COLORS AND FONTS
+        ============================================ */
+        :root {
+            --main-green: #9acd32;
+            --dark-bg: #0f172a;
+            --light-text: #64748b;
+            --mint-bg: #f1f6f6;
+            --teal: #2b7a78;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        header img {
+            height: 70px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: var(--dark-bg);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--main-green);
+        }
+
+        .nav-btn {
+            background-color: #ffcc00;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: #000 !important;
+            font-weight: 700;
+        }
+
+        /* ============================================
+           BLOG POST CONTAINER
+        ============================================ */
+        .post-container {
+            max-width: 1400px;
+            margin: 120px auto 80px;
+            padding: 0 8%;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 80px;
+        }
+
+        /* ============================================
+           TABLE OF CONTENTS (LEFT SIDEBAR)
+           Sticky sidebar that follows on scroll
+        ============================================ */
+        .toc-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .toc-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: 25px;
+        }
+
+        .toc-list {
+            list-style: none;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        /* Custom scrollbar for TOC */
+        .toc-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .toc-list::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+
+        .toc-list::-webkit-scrollbar-thumb {
+            background: var(--teal);
+            border-radius: 10px;
+        }
+
+        .toc-list::-webkit-scrollbar-thumb:hover {
+            background: #1f5f5d;
+        }
+
+        .toc-list li {
+            margin-bottom: 15px;
+        }
+
+        .toc-list a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .toc-list a:hover {
+            color: var(--teal);
+        }
+
+        .toc-list .sub-item {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .toc-list .sub-item a {
+            font-size: 0.88rem;
+            font-weight: 400;
+        }
+
+        /* ============================================
+           READ MORE SECTION (Related Posts)
+        ============================================ */
+        .read-more-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: 20px;
+        }
+
+        .related-post {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .related-post:hover {
+            transform: translateX(5px);
+        }
+
+        .related-post img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .related-post h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            line-height: 1.4;
+            transition: color 0.3s;
+        }
+
+        .related-post:hover h4 {
+            color: var(--teal);
+        }
+
+        .sidebar-divider {
+            height: 2px;
+            background: #f1f5f9;
+            margin: 30px 0;
+        }
+
+        /* ============================================
+           MAIN BLOG CONTENT AREA
+        ============================================ */
+        .post-content {
+            max-width: 800px;
+        }
+
+        /* Category badge */
+        .category-badge {
+            display: inline-block;
+            background: rgba(154, 205, 50, 0.15);
+            color: #6b8e23;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+        }
+
+        /* Main title */
+        .post-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--dark-bg);
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        /* Author and date info */
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--mint-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--teal);
+            font-size: 1.2rem;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--dark-bg);
+        }
+
+        .post-date {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        .read-time {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Featured image */
+        .featured-image {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ============================================
+           BLOG CONTENT STYLING
+        ============================================ */
+        .post-body h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            scroll-margin-top: 100px;
+        }
+
+        .post-body h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            scroll-margin-top: 100px;
+        }
+
+        .post-body p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 25px;
+        }
+
+        .post-body p strong a {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .post-body p strong a:hover {
+            text-decoration: underline;
+        }
+
+        /* Images within content */
+        .content-image {
+            width: 100%;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .content-image img,
+        .wp-block-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+    background: #000;
+    color: #fff;
+    padding: 80px 40px 40px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-brand h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+}
+
+.footer-column h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-column a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #777;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+/* Important: removes image bottom gap */
+footer img {
+    display: block;
+}
+
+
+        /* ============================================
+           MOBILE RESPONSIVE
+        ============================================ */
+        @media (max-width: 992px) {
+            .post-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 5%;
+                margin-top: 100px;
+            }
+
+            .toc-sidebar {
+                position: relative;
+                top: 0;
+                background: var(--mint-bg);
+                padding: 30px;
+                border-radius: 15px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER
+    ============================================ -->
+    <header>
+        <img src="https://www.koozo.com/cdn/shop/files/Untitled_design_19.png?v=1767965591&width=500" alt="koozo">
+        <nav>
+            <a href="https://koozo.vercel.app/">Home</a>
+            <a href="https://koozo.vercel.app/blog">Blog</a>
+            <a href="https://www.koozo.com/pages/about-us">About Us</a>
+            <a href="https://www.koozo.com/pages/contact/">Contact</a>
+            <a href="https://www.koozo.com/" class="nav-btn ms-4">Shop</a>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         BLOG POST LAYOUT
+         Left: Table of Contents
+         Right: Blog Content
+    ============================================ -->
+    <div class="post-container">
+
+        <!-- TABLE OF CONTENTS (LEFT SIDEBAR) -->
+        <aside class="toc-sidebar">
+            
+            <!-- READ MORE SECTION (Related Post) -->
+            <div class="read-more-section">
+                <h3 class="section-title">Read More</h3>
+                
+                <!-- Related Post -->
+                <a href="https://koozo.vercel.app/blog/how-to-use-baby-bath-stand" class="related-post">
+                    <img src="https://www.koozo.com/cdn/shop/files/Baby_bath_stand.png?v=1763040116&width=846" alt="VC Platform">
+                    <h4>How To Safely Use The Trulittle Adjustable Baby Bath Stand
+
+</h4>
+                </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="sidebar-divider"></div>
+
+            <!-- TABLE OF CONTENTS -->
+
+<div class="toc-sidebar">
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <div class="toc-scroll">
+      <ul class="toc-list">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#the-science-behind-active-sitting">The Science Behind Active Sitting</a></li>
+        <li>
+          <a href="#versatility-for-every-environment">Versatility for Every Environment</a>
+        
+        </li>
+        <li><a href="#alleviating-chronic-back-pain">Alleviating Chronic Back Pain</a></li>
+        <li>
+          <a href="#enhancing-focus-and-productivity">Enhancing Focus and Productivity</a>
+         
+        </li>
+        <li><a href="#building-long-term-posture-habits">Building Long-Term Posture Habits</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</aside>
+
+        <!-- MAIN BLOG CONTENT -->
+        <article class="post-content">
+            
+            <!-- Category Badge -->
+            <span class="category-badge">Health & Wellness</span>
+
+            <!-- Blog Title -->
+            <h1 class="post-title">The Importance of Good Posture and Back Support While Sitting: A Comprehensive Guide
+</h1>
+
+            <!-- Author Info and Meta -->
+            <div class="post-meta">
+                <div class="author-info">
+                    <div class="author-avatar">
+                        VG
+                    </div>
+                    <div>
+                        <div class="author-name">Vipul Gupta</div>
+                        <div class="post-date">February 18, 2026</div>
+                    </div>
+                </div>
+                <div class="read-time">
+                    <i class="far fa-clock"></i> 6 min read
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="featured-image">
+                <img src="https://www.koozo.com/cdn/shop/files/Posture_purple.png?v=1770971344&width=846" alt="koozo gadgets">
+            </div>
+
+            <!-- Blog Post Body Content -->
+            <div class="post-body">
+              
+           <h2 id="introduction">Introduction</h2>
+<p>In our modern, sedentary lifestyles, most of us spend more time sitting than sleeping. Whether at a desk, in a car, or on the couch, this prolonged inactivity can wreak havoc on our spinal alignment. Good posture is not just about looking confident; it is a critical component of long-term physical health. Slouching compresses the lungs, strains the lower back, and can even affect digestion. The PostureMax Pro Foldable Posture Corrector Seat addresses these issues head-on by providing the structural support your body needs to maintain a natural "S" curve. As one of the most practical <strong><a href="https://www.koozo.com/">health and wellness products</a></strong> available, it transforms any ordinary chair into an ergonomic workstation, protecting your spine from the cumulative damage of daily life.</p>
+
+<h2 id="the-science-behind-active-sitting">The Science Behind Active Sitting</h2>
+<p>The PostureMax Pro differentiates itself from standard cushions by utilizing a leverage-based design. Unlike soft pillows that you sink into, this device uses your own body weight to correct your posture. When you sit on the curved base, the backrest automatically levers forward, pushing gently against your lumbar spine. This active engagement prevents your pelvis from rolling backward—the primary cause of slouching. By stabilizing the pelvis, the rest of the spine naturally aligns, reducing the muscular effort required to sit up straight. It effectively trains your body to maintain better posture even when you aren't using the device.</p>
+
+<h2 id="versatility-for-every-environment">Versatility for Every Environment</h2>
+
+<img src="https://www.koozo.com/cdn/shop/files/Amazon_Banner_1500X1500_purple_7.png?v=1770971344&amp;width=846" alt="" />
+
+<p><strong id="portable-and-foldable-design">Portable and Foldable Design<br></strong>The "foldable" aspect of the PostureMax Pro is a game-changer for consistency. You can’t take your expensive ergonomic office chair with you to a coffee shop or a stadium, but you can take this seat. It collapses into a slim profile that fits easily into a bag, ensuring you have the best wellness product for back support wherever you go.</p>
+
+<p><strong id="universal-fit">Universal Fit<br></strong>Whether you are sitting on a soft sofa, a hard dining chair, or a car seat, the PostureMax Pro provides a consistent sitting experience. It acts as a buffer between you and the surface, neutralizing the negative effects of poor furniture. This universality means you don't need to buy multiple expensive chairs; you just need one smart adapter.</p>
+
+<p><strong id="durability-and-maintenance">Durability and Maintenance<br></strong>Constructed from high-density, durable materials, the seat is built to withstand daily use without losing its shape. Unlike foam cushions that flatten out over time, the rigid core of the PostureMax Pro maintains its supportive properties for years. It is easy to clean and maintain, making it a reliable companion for your daily health journey.</p>
+
+<h2 id="alleviating-chronic-back-pain">Alleviating Chronic Back Pain</h2>
+<p>Chronic back pain is often the result of micro-traumas sustained over years of poor sitting habits. The PostureMax Pro helps alleviate this by redistributing pressure away from the coccyx (tailbone) and discs. By lifting the hips and supporting the lower back, it reduces the compressive forces that lead to sciatica and herniated discs. For many users, the immediate relief felt when the spine is supported correctly is profound. It offers a non-invasive, drug-free solution to pain management, positioning it as a standout choice among health care products for home use.</p>
+
+<h2 id="enhancing-focus-and-productivity">Enhancing Focus and Productivity</h2>
+
+<p><strong id="improved-oxygen-intake">Improved Oxygen Intake<br></strong>Slouching compresses the chest cavity, restricting the diaphragm's ability to expand fully. This leads to shallow breathing and reduced oxygen intake. By keeping your spine aligned and chest open, the PostureMax Pro facilitates deeper breathing. More oxygen to the brain translates to better focus, sharper concentration, and reduced mental fatigue during long workdays.</p>
+
+<p><strong id="reduced-muscle-fatigue">Reduced Muscle Fatigue<br></strong>When you slouch, your back muscles have to overwork to hold you up against gravity in an unnatural position. This leads to the burning sensation in the shoulders and neck known as "tech neck." The support provided by the seat takes the load off these muscles, allowing them to relax.</p>
+
+<p><strong id="energy-conservation">Energy Conservation<br></strong>Fighting gravity takes energy. By mechanically aligning your skeleton, the PostureMax Pro reduces the energy expenditure required just to sit. This conserved energy leaves you feeling fresher at the end of the day, rather than exhausted and achy. It is a productivity tool as much as a health tool.</p>
+
+<h2 id="building-long-term-posture-habits">Building Long-Term Posture Habits</h2>
+<p>The ultimate goal of any posture aid is to teach your body how to hold itself correctly without assistance. The PostureMax Pro builds "proprioception"—your body's awareness of its position in space. After using the seat consistently for a few weeks, you will find yourself naturally correcting your posture even when standing or walking. It helps break the cycle of bad habits that lead to the "C-slump." By instilling these healthy patterns, the device serves as a preventative measure against future spinal issues, ensuring you remain active and mobile well into your later years.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<img src="https://www.koozo.com/cdn/shop/files/Amazon_Banner_1500X1500_purple_4.png?v=1770971344&amp;width=846" alt="" />
+
+<p>In conclusion, investing in your posture is investing in your future self. The PostureMax Pro Foldable Posture Corrector Seat offers a simple, effective, and portable solution to the complex problem of modern sedentary living. By combining active leverage technology with ergonomic design, it provides immediate relief and long-term correction. Whether you are battling chronic back pain or simply want to improve your focus at work, this device delivers tangible results. It is widely considered the <strong><a href="https://www.koozo.com/">best health product</a></strong> for anyone looking to upgrade their daily sitting experience, proving that a small change in how you sit can make a massive difference in how you feel.</p>
+</div>
+
+        </article>
+
+    </div>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+<h4>Also avilable on</h4>
+                       <a href="https://koozo.com/" class="logo">
+    <img src="https://www.koozo.com/cdn/shop/files/blinkit.png?v=1765356448&width=480" 
+         alt="KOOZO Logo" 
+         style="height: 66px; width: auto;">
+</a><br>
+
+                    <h5>Koozo Commerce Pvt. Ltd.</h5>
+<p>
+Splendor Spectrum One, Tower 1<br>
+4th Floor, Golf Course Ext. Road Sector-58,<br>
+Gurugram, 122001, HR
+</p>
+
+<div class="social-links">
+    <a href="https://www.facebook.com/share/1PmDSbqvWU/" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/facebook.png?v=1765360337" alt="Facebook">
+    </a>
+
+    <a href="https://www.instagram.com/social.koozo" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/instagram.png?v=1765360337" alt="Instagram">
+    </a>
+
+    <a href="https://youtube.com/@koozo_commerce" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/youtube.png?v=1765360337" alt="YouTube">
+    </a>
+
+    <a href="https://www.linkedin.com/company/koozocommerce/" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/linkedin.png?v=1765360336" alt="LinkedIn">
+    </a>
+</div>
+
+                </div>
+                 <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="https://www.koozo.com/pages/about-us">About Us</a>
+                    <a href="https://www.koozo.com/collections/all">Our Products</a>
+                    <a href="https://koozo.vercel.app/blog/">Blog</a>
+                    <a href="https://www.koozo.com/pages/partner-program">Partner Program</a>
+                    <a href="https://www.koozo.com/pages/bulk-orders">Bulk Orders</a>
+                    <a href="https://www.koozo.com/pages/track-order">Track Order</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <a href="https://www.koozo.com/pages/contact">Contact Us</a>
+                    <a href="https://www.koozo.com/pages/shipping-policy">Shipping Policy</a>
+                    <a href="https://www.koozo.com/pages/return-policy">Return Policy</a>
+                    <a href="https://www.koozo.com/pages/privacy-policy">Privacy Policy</a>
+                    <a href="https://www.koozo.com/pages/terms-of-service">Terms of Service</a>
+                    <a href="https://www.koozo.com/pages/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Koozo Commerce Pvt Ltd. All the purchases should be made on koozo.com official website only 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
